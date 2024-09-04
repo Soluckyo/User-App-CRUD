@@ -5,15 +5,22 @@ import com.example.uapp.repository.UserRepo;
 import com.example.uapp.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Map;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/users")
+@RequestMapping("/api/v1/users")
 public class MainController {
 
     private UserRepo userRepo;
     private UserService userService;
+
+    @GetMapping
+    public List<Users> getAllUsers() {
+        return userRepo.findAll();
+    }
 
     @GetMapping("/{userId}")
     public Users getUser(@PathVariable String userId) {

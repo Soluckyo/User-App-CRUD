@@ -1,7 +1,6 @@
 package com.example.uapp.service;
 
 import com.example.uapp.model.Users;
-
 import java.util.Map;
 
 public interface UserService {
